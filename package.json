@@ -7,10 +7,10 @@
   "repository": "https://github.com/probot/smee.git",
   "scripts": {
     "start": "node ./index.js",
-    "start-dev": "concurrently \"nodemon --ignore src/ ./index.js\" \"webpack -w\"",
-    "build": "webpack -p",
-    "test": "jest --coverage && eslint '**/*.js'",
-    "test:update": "jest -u",
+    "start-dev": "yarn concurrently \"nodemon --ignore src/ ./index.js\" \"node_modules/.bin/webpack -w\"",
+    "build": "./node_modules/.bin/webpack -p",
+    "test": "yarn jest --coverage && eslint '**/*.js'",
+    "test:update": "yarn jest -u",
     "postinstall": "npm run build"
   },
   "dependencies": {
@@ -88,5 +88,9 @@
     "env": [
       "jest"
     ]
+  },
+  "volta": {
+    "node": "10.16.3",
+    "yarn": "1.17.3"
   }
 }
