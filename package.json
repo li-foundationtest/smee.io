@@ -6,7 +6,7 @@
   "license": "ISC",
   "repository": "https://github.com/probot/smee.git",
   "scripts": {
-    "start": "./node_modules/.bin/pm2 run ./index.js -i max",
+    "start": "./node_modules/.bin/pm2 start ./index.js -i max",
     "start-dev": "yarn concurrently \"nodemon --ignore src/ ./index.js\" \"webpack -w\"",
     "build": "webpack -p",
     "test": "yarn jest --coverage && eslint '**/*.js'",

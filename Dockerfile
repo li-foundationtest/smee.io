@@ -15,7 +15,7 @@
 ##############################################################################
 ARG BUILD_VERSION
 ARG BUILD_DATE
-ARG PORT=80
+ARG PORT=3000
 
 ##############################################################################
 # Build the container with Source code compiled
