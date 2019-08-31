@@ -6,9 +6,9 @@
   "license": "ISC",
   "repository": "https://github.com/probot/smee.git",
   "scripts": {
-    "start": "node ./index.js",
-    "start-dev": "yarn concurrently \"nodemon --ignore src/ ./index.js\" \"node_modules/.bin/webpack -w\"",
-    "build": "./node_modules/.bin/webpack -p",
+    "start": "./node_modules/.bin/pm2 run ./index.js -i max",
+    "start-dev": "yarn concurrently \"nodemon --ignore src/ ./index.js\" \"webpack -w\"",
+    "build": "webpack -p",
     "test": "yarn jest --coverage && eslint '**/*.js'",
     "test:update": "yarn jest -u",
     "postinstall": "npm run build"
@@ -24,6 +24,7 @@
     "helmet": "^3.9.0",
     "moment": "^2.19.1",
     "moment-timezone": "^0.5.14",
+    "pm2": "^3.5.1",
     "primer-css": "^9.6.0",
     "prop-types": "^15.6.0",
     "raven": "^2.6.3",

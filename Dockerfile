@@ -15,7 +15,7 @@
 ##############################################################################
 ARG BUILD_VERSION
 ARG BUILD_DATE
-ARG PORT=3000
+ARG PORT=80
 
 ##############################################################################
 # Build the container with Source code compiled
@@ -25,7 +25,8 @@ FROM node:lts-alpine as build-env
 ## > See about optimization: https://www.aptible.com/documentation/enclave/tutorials/faq/dockerfile-caching/npm-dockerfile-caching.html
 WORKDIR /source
 ADD . .
-RUN npm install --production --unsafe-perm
+RUN npm install --unsafe-perm
+
 
 ##############################################################################
 # Build the final runtime container
